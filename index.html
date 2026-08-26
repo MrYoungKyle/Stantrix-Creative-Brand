@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Talent Pool</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Offline Excel reader -->
+    <script src="xlsx.full.min.js"></script>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- PAGE HEADER -->
+
+        <header class="page-header">
+
+            <h1>Talent Pool</h1>
+
+            <p>
+                Browse talent by year
+            </p>
+
+        </header>
+
+
+        <!-- YEAR TABS -->
+
+        <div class="year-tabs">
+
+            <button
+                class="year-tab active"
+                data-year="2026"
+            >
+                2026
+            </button>
+
+            <button
+                class="year-tab"
+                data-year="2025"
+            >
+                2025
+            </button>
+
+            <button
+                class="year-tab"
+                data-year="2024"
+            >
+                2024
+            </button>
+
+            <button
+                class="year-tab"
+                data-year="2023"
+            >
+                2023
+            </button>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search talent..."
+            >
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead id="tableHead"></thead>
+
+                <tbody id="tableBody">
+
+                    <tr>
+
+                        <td>
+                            Loading...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- PAGINATION -->
+
+        <div class="pagination-container">
+
+            <div
+                class="pagination-info"
+                id="paginationInfo"
+            >
+                Showing 0 of 0
+            </div>
+
+
+            <div
+                class="pagination"
+                id="pagination"
+            >
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Main JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
