@@ -2,140 +2,246 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>STANTRIX</title>
 
-    <title>Talent Pool</title>
-
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Offline Excel reader -->
-    <script src="xlsx.full.min.js"></script>
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-    <div class="container">
-
-        <!-- PAGE HEADER -->
-
-        <header class="page-header">
-
-            <h1>Talent Pool</h1>
-
-            <p>
-                Browse talent by year
-            </p>
-
-        </header>
-
-
-        <!-- YEAR TABS -->
-
-        <div class="year-tabs">
-
-            <button
-                class="year-tab active"
-                data-year="2026"
-            >
-                2026
-            </button>
-
-            <button
-                class="year-tab"
-                data-year="2025"
-            >
-                2025
-            </button>
-
-            <button
-                class="year-tab"
-                data-year="2024"
-            >
-                2024
-            </button>
-
-            <button
-                class="year-tab"
-                data-year="2023"
-            >
-                2023
-            </button>
-
-        </div>
-
-
-        <!-- SEARCH -->
-
-        <div class="controls">
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search talent..."
-            >
-
-        </div>
-
-
-        <!-- TABLE -->
-
-        <div class="table-wrapper">
-
-            <table>
-
-                <thead id="tableHead"></thead>
-
-                <tbody id="tableBody">
-
-                    <tr>
-
-                        <td>
-                            Loading...
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-        <!-- PAGINATION -->
-
-        <div class="pagination-container">
-
-            <div
-                class="pagination-info"
-                id="paginationInfo"
-            >
-                Showing 0 of 0
-            </div>
-
-
-            <div
-                class="pagination"
-                id="pagination"
-            >
-            </div>
-
-        </div>
-
+    <div class="hero-carousel" aria-hidden="true">
+        <div class="hero-slide hero-slide-1 is-active"></div>
+        <div class="hero-slide hero-slide-2"></div>
+        <div class="hero-slide hero-slide-3"></div>
     </div>
 
+    <nav class="navbar">
 
-    <!-- Main JavaScript -->
+        <!-- LEFT: LOGO -->
+        <div class="nav-logo">
+            <a href="#">
+                <img src="ico/stantrix logo.svg" alt="STANTRIX">
+            </a>
+        </div>
 
-    <script src="script.js"></script>
+
+        <!-- CENTER: NAVIGATION -->
+        <ul class="nav-links" id="nav-links"></ul>
+
+
+        <!-- RIGHT: MESSAGE -->
+        <div class="nav-message">
+
+            <a href="#" class="nav-cta" aria-label="Let's Talk">
+                <span class="cta-text">Get a Quote</span>
+                <span class="cta-badge">
+                    <svg class="cta-mail" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="4" y="6" width="16" height="12" rx="1.5"></rect>
+                        <path d="M5 7.5l7 5.5 7-5.5"></path>
+                    </svg>
+                    <svg class="cta-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6 18L18 6M14 10h4v4"></path>
+                    </svg>
+                </span>
+            </a>
+
+        </div>
+
+    </nav>
+
+        <nav class="floating-nav">
+
+        <a href="#home" class="nav-item-sticky">
+            <span class="nav-icon-sticky">⌂</span>
+            <span class="nav-label-sticky">Home</span>
+        </a>
+
+        <a href="#about" class="nav-item-sticky">
+            <span class="nav-icon-sticky">●</span>
+            <span class="nav-label-sticky">About</span>
+        </a>
+
+        <a href="#services" class="nav-item-sticky">
+            <span class="nav-icon-sticky">✦</span>
+            <span class="nav-label-sticky">Services</span>
+        </a>
+
+        <a href="#work" class="nav-item-sticky">
+            <span class="nav-icon-sticky">□</span>
+            <span class="nav-label-sticky">Work</span>
+        </a>
+
+        <a href="#contact" class="nav-item-sticky">
+            <span class="nav-icon-sticky">↗</span>
+            <span class="nav-label-sticky">Contact</span>
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main class="hero">
+
+        <div>
+            <div class="hero-heading-box">
+                <h1>Ideas into visuals<br>that moves</h1>
+            </div>
+
+            <div class="hero-paragraph-box">
+                <p>STANTRIX is a freelance creative studio delivering high-impact design, motion and digital experiences that help brands stand out and connect.</p>
+            </div>
+
+            <div class="hero-actions" aria-label="Hero actions">
+                <a class="hero-button hero-button-primary" href="#work">
+                    <span>View my work</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 19L19 5M11 5h8v8"></path>
+                    </svg>
+                </a>
+
+                <a class="hero-button hero-button-secondary" href="#contact">
+                    <span>Hire Me</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 19L19 5M11 5h8v8"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="hero-stats" aria-label="Studio achievements">
+                <div class="hero-stat">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 3h8v4a4 4 0 0 1-8 0V3Z"></path>
+                        <path d="M8 5H5v2a4 4 0 0 0 4 4M16 5h3v2a4 4 0 0 1-4 4M12 11v5M8 21h8M10 16h4"></path>
+                    </svg>
+                    <strong>50+</strong>
+                    <span>Projects Completed</span>
+                </div>
+
+                <div class="hero-stat">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="8" r="3.5"></circle>
+                        <path d="M5 20c.7-3.4 3-5.5 7-5.5s6.3 2.1 7 5.5M17.5 4.5l.8 1.2 1.4.4-1 .9.1 1.5-1.3-.6-1.3.6.1-1.5-1-.9 1.4-.4.8-1.2Z"></path>
+                    </svg>
+                    <strong>30+</strong>
+                    <span>Happy Clients</span>
+                </div>
+
+                <div class="hero-stat">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14.5 5.5a4 4 0 0 0-5 5L5 15a2.8 2.8 0 0 0 4 4l4.5-4.5a4 4 0 0 0 5-5l-2.2 2.2-2.5-.5-.5-2.5 2.2-2.2Z"></path>
+                        <path d="m6 18 2-2"></path>
+                    </svg>
+                    <strong>100%</strong>
+                    <span>Dedication</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <section class="featured-work" id="work" aria-labelledby="featured-work-title">
+        <div class="featured-work-header">
+            <div>
+                <span class="section-eyebrow">Featured Work</span>
+                <h2 id="featured-work-title">Latest Projects</h2>
+            </div>
+
+            <div class="featured-work-controls">
+                <a class="featured-work-link" href="#work">
+                    <span>View all projects</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 19L19 5M11 5h8v8"></path>
+                    </svg>
+                </a>
+                <button class="project-control" type="button" data-project-direction="previous" aria-label="Previous projects">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m14 6-6 6 6 6"></path>
+                    </svg>
+                </button>
+                <button class="project-control" type="button" data-project-direction="next" aria-label="Next projects">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m10 6 6 6-6 6"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="project-list" id="project-list">
+            <article class="project-card project-card-nutrix">
+                <div class="project-card-content">
+                    <span class="project-name">Nutrix</span>
+                    <span class="project-type">Product Label Design</span>
+                    <span class="project-arrow">↗</span>
+                </div>
+            </article>
+
+            <article class="project-card project-card-film">
+                <div class="project-card-content">
+                    <span class="project-name">Never Settle</span>
+                    <span class="project-type">Brand Film</span>
+                    <span class="project-arrow">↗</span>
+                </div>
+                <span class="project-play" aria-hidden="true">▶</span>
+            </article>
+
+            <article class="project-card project-card-tech">
+                <div class="project-card-content">
+                    <span class="project-name">Tech Summit</span>
+                    <span class="project-type">2D Motion Design</span>
+                    <span class="project-arrow">↗</span>
+                </div>
+            </article>
+
+            <article class="project-card project-card-game">
+                <div class="project-card-content">
+                    <span class="project-name">Game Day</span>
+                    <span class="project-type">Social Media Design</span>
+                    <span class="project-arrow">↗</span>
+                </div>
+                <span class="project-play" aria-hidden="true">▶</span>
+            </article>
+
+            <article class="project-card project-card-keza">
+                <div class="project-card-content">
+                    <span class="project-name">Keza</span>
+                    <span class="project-type">Brand Identity</span>
+                    <span class="project-arrow">↗</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <script src="nav.js"></script>
+
+    <script>
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        let activeHeroSlide = 0;
+
+        setInterval(() => {
+            heroSlides[activeHeroSlide].classList.remove('is-active');
+            activeHeroSlide = (activeHeroSlide + 1) % heroSlides.length;
+            heroSlides[activeHeroSlide].classList.add('is-active');
+        }, 6000);
+
+        const projectList = document.querySelector('#project-list');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        document.querySelectorAll('[data-project-direction]').forEach((control) => {
+            control.addEventListener('click', () => {
+                const direction = control.dataset.projectDirection === 'next' ? 1 : -1;
+                const cardWidth = projectCards[0].getBoundingClientRect().width + 18;
+
+                projectList.scrollBy({
+                    left: cardWidth * direction,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 
